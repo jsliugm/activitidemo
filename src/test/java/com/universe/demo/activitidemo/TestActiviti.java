@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class TestActiviti {
 
-	/** Ê¹ÓÃ´úÂë´´½¨¹¤×÷Á÷ ĞèÒªµÄ23ÕÅ±í */
+	/** ä½¿ç”¨ä»£ç åˆ›å»ºå·¥ä½œæµ éœ€è¦çš„23å¼ è¡¨ */
 	@Test
 	public void createTable() {
 		ProcessEngineConfiguration processEngineConfiguration = ProcessEngineConfiguration
@@ -18,27 +18,27 @@ public class TestActiviti {
 		processEngineConfiguration.setJdbcPassword("");
 		/*
 		 * public static final String DB_SCHEMA_UPDATE_FALSE = "false";
-		 * ²»ÄÜ×Ô¶¯´´½¨±í£¬ĞèÒª±í´æÔÚ public static final String DB_SCHEMA_UPDATE_CREATE_DROP
-		 * = "create-drop";ÏÈÉ¾³ı±íÔÙ´´½¨±í public static final String
-		 * DB_SCHEMA_UPDATE_TRUE = "true";Èç¹û±í²»´æÔÚ£¬×Ô¶¯´´½¨±í
+		 * ä¸èƒ½è‡ªåŠ¨åˆ›å»ºè¡¨ï¼Œéœ€è¦è¡¨å­˜åœ¨ public static final String DB_SCHEMA_UPDATE_CREATE_DROP
+		 * = "create-drop";å…ˆåˆ é™¤è¡¨å†åˆ›å»ºè¡¨ public static final String
+		 * DB_SCHEMA_UPDATE_TRUE = "true";å¦‚æœè¡¨ä¸å­˜åœ¨ï¼Œè‡ªåŠ¨åˆ›å»ºè¡¨
 		 */
  
 		processEngineConfiguration
 				.setDatabaseSchemaUpdate(processEngineConfiguration.DB_SCHEMA_UPDATE_TRUE);
-		// ¹¤×÷Á÷µÄºËĞÄ¶ÔÏó£¬ProcessEngine¶ÔÏó
+		// å·¥ä½œæµçš„æ ¸å¿ƒå¯¹è±¡ï¼ŒProcessEngineå¯¹è±¡
 		ProcessEngine processEngine = processEngineConfiguration
 				.buildProcessEngine();
 		System.out.println("processEngine:" + processEngine);
  
 	}
  
-	/** Ê¹ÓÃÅäÖÃÎÄ¼ş´´½¨¹¤×÷Á÷ĞèÒªµÄ23ÕÅ±í */
+	/** ä½¿ç”¨é…ç½®æ–‡ä»¶åˆ›å»ºå·¥ä½œæµéœ€è¦çš„23å¼ è¡¨ */
 	@Test
 	public void creteTable_2() {
 		// ProcessEngineConfiguration processEngineConfiguration =
 		// ProcessEngineConfiguration
 		// .createProcessEngineConfigurationFromResource("activiti.cfg.xml");
-		// ¹¤×÷Á÷µÄºËĞÄ¶ÔÏó£¬ProcessEngine¶ÔÏó
+		// å·¥ä½œæµçš„æ ¸å¿ƒå¯¹è±¡ï¼ŒProcessEngineå¯¹è±¡
 		ProcessEngine processEngine = ProcessEngineConfiguration
 				.createProcessEngineConfigurationFromResource(
 						"activiti.cfg.xml").buildProcessEngine();
