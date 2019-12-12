@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:tns="http://www.activiti.org/testm1576114107584" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://www.activiti.org/testm1576114107584" id="m1576114107584" name="">
+  <process id="groupTask" isExecutable="true" isClosed="false" processType="None">
+    <startEvent id="_2" name="StartEvent"></startEvent>
+    <userTask id="_3" name="审批" activiti:candidateUsers="a,b,c,d,e"></userTask>
+    <endEvent id="_4" name="EndEvent"></endEvent>
+    <sequenceFlow id="_6" sourceRef="_2" targetRef="_3"></sequenceFlow>
+    <sequenceFlow id="_5" sourceRef="_3" targetRef="_4"></sequenceFlow>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_groupTask">
+    <bpmndi:BPMNPlane bpmnElement="groupTask" id="BPMNPlane_groupTask">
+      <bpmndi:BPMNShape bpmnElement="_2" id="BPMNShape__2">
+        <omgdc:Bounds height="35.0" width="35.0" x="210.0" y="50.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="_3" id="BPMNShape__3">
+        <omgdc:Bounds height="55.0" width="85.0" x="185.0" y="140.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="_4" id="BPMNShape__4">
+        <omgdc:Bounds height="35.0" width="35.0" x="210.0" y="230.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="_6" id="BPMNEdge__6">
+        <omgdi:waypoint x="227.0" y="85.0"></omgdi:waypoint>
+        <omgdi:waypoint x="227.0" y="140.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="_5" id="BPMNEdge__5">
+        <omgdi:waypoint x="227.0" y="195.0"></omgdi:waypoint>
+        <omgdi:waypoint x="227.0" y="230.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>
