@@ -9,7 +9,9 @@ import org.activiti.engine.runtime.ProcessInstance;
 import org.activiti.engine.task.Task;
 import org.junit.Test;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Slf4j
 public class ExclusiveGateWay {
@@ -33,8 +35,10 @@ public class ExclusiveGateWay {
 	public void startProcessInstance() {
 		// 流程定义的key
 		String processDefinitionKey = "baoxiao";
+		Map<String,Object> var = new HashMap<>();
+		var.put("branchCode","3010100");
 		ProcessInstance pi = processEngine.getRuntimeService()// 与正在执行 的流程实例和执行对象相关的Service
-				.startProcessInstanceByKey(processDefinitionKey); // 使用流程定义的key启动流程实例,key对应helloworld.bpmn文件中id的属性值，使用key值启动，默认是按照最新版本的流程定义启动
+				.startProcessInstanceByKey(processDefinitionKey,var); // 使用流程定义的key启动流程实例,key对应helloworld.bpmn文件中id的属性值，使用key值启动，默认是按照最新版本的流程定义启动
 		System.out.println("流程实例ID:" + pi.getId());
 		System.out.println("流程定义ID:" + pi.getProcessDefinitionId());
 	}
@@ -42,7 +46,7 @@ public class ExclusiveGateWay {
 	/** 查询当前人的个人任务 */
 	@Test
 	public void findMyPersonalTask() {
-		String assignee = "张三";
+		String assignee = "王五";
 		List<Task> list = processEngine.getTaskService()// 与正在执行的任务管理相关的Service
 				.createTaskQuery()// 创建任务查询
 				.taskAssignee(assignee)// 指定个人任查询，指定办理人
@@ -65,9 +69,11 @@ public class ExclusiveGateWay {
 	@Test
 	public void completeMyPersonalTask() {
 		// 任务ID
-		String taskId = "27504";
+		String taskId = "62504";
+		Map<String,Object> var = new HashMap<>();
+		var.put("money",10000);
 		processEngine.getTaskService()// 与正在执行的任务管理相关的Service
-				.complete(taskId);
+				.complete(taskId,var);
 		System.out.println("完成任务：任务ID:" + taskId);
 	}
 	@Test
